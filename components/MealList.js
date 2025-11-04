@@ -4,11 +4,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import Button from './Button/Button';
 import { fetchMeals } from '../store/slices/mealSlice';
 
-export default function MealGrid() {
+export default function MealList() {
   const dispatch = useDispatch();
   const { items: allMeals, status } = useSelector((state) => state.meals);
   const [visibleCount, setVisibleCount] = useState(8);
-
+  console.log(allMeals);
   useEffect(() => {
     if (status === 'idle') {
       dispatch(fetchMeals(1));

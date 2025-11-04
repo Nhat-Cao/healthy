@@ -1,7 +1,7 @@
 import Header from '../components/Header'
 import Chart from '../components/Chart'
 import MealCategory from '../components/MealCategory'
-import MealGrid from '../components/MealGrid'
+import MealList from '../components/MealList'
 import Footer from '../components/Footer'
 import Achievement from '../components/Achievement'
 
@@ -20,7 +20,7 @@ export default function Home() {
         </div>
 
         <MealCategory />
-        <MealGrid />
+        <MealList />
       </main>
       <Footer />
     </>

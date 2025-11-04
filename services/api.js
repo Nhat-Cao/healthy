@@ -38,7 +38,7 @@ export const getDiaries = async (page = 1) => {
     setTimeout(() => {
       const date = new Date();
       resolve({
-        data: Array(8).fill(0).map((_, i) => {
+        data: Array(9).fill(0).map((_, i) => {
           date.setDate(date.getDate() - ((page - 1) * 8 + i));
           return {
             id: (page - 1) * 8 + i + 1,
@@ -56,7 +56,7 @@ export const getColumns = async (page = 1) => {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve({
-        data: Array(8).fill(0).map((_, i) => ({
+        data: Array(9).fill(0).map((_, i) => ({
           id: (page - 1) * 8 + i + 1,
           title: '魚を食べて頭もカラダも元気に！知っておきたい魚を食べるメリ…',
           date: '2025.11.04',

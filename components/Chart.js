@@ -11,7 +11,7 @@ const CustomTooltip = ({ active, payload, label }) => {
         <p className="text-white">{label}</p>
         {payload.map((entry) => (
           <p key={entry.name} style={{ color: entry.color }}>
-            {entry.name}: {entry.value.toFixed(1)}
+            {entry.name}: {typeof entry.value === 'number' ? entry.value.toFixed(1) : entry.value}
           </p>
         ))}
       </div>
@@ -45,7 +45,7 @@ export default function Chart({uiContext = ''}) {
           BODY RECORD - {today.getFullYear()}.{(today.getMonth() + 1).toString().padStart(2, '0')}.{today.getDate().toString().padStart(2, '0')}
         </div>
       )}
-      <div className={`h-${uiContext === 'record' ? "64": "96"} mb-4`}>
+  <div className={`${uiContext === 'record' ? 'h-64' : 'h-96'} mb-4`}>
         <ResponsiveContainer width="100%" height="100%">
           <LineChart data={data}>
             <CartesianGrid stroke="#2d2d2d" vertical={false} />
